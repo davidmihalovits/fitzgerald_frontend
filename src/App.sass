@@ -1,0 +1,38 @@
+$primary-color: #4DB8B8
+	
+* 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+a 
+    margin: 0px
+    padding: 0px
+    text-decoration: none
+    color: black
+
+hr 
+    border: 0.3px solid rgba(10, 46, 78, 0.1);
+
+::-webkit-scrollbar 
+    height: 12px
+    width: 0px
+    background: white
+
+::-webkit-scrollbar-thumb 
+    background: $primary-color
+
+@-moz-document url-prefix() 
+    html
+        scrollbar-color: $primary-color white;
+        scrollbar-width: none
+            
+.caret-fa 
+    opacity: 0.3
+    transition-duration: 0.5s
+    color: gray
+	
+    &:hover 
+        opacity: 1
+        transition-duration: 0.5s
+        color: $primary-color

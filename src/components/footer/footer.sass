@@ -1,0 +1,132 @@
+@import '../../App'
+
+.footer-container
+    margin: 0 auto
+    max-width: 1300px
+    
+    .footer
+        margin: 40px 20px
+
+        .footer-logo-social
+            display: flex
+            align-items: center
+
+            .footer-logo 
+                width: 122px
+
+            img
+                margin-right: auto
+
+            a
+                margin-right: 20px
+
+            a:last-child
+                margin-right: 0px
+
+        .footer-logo-social2
+            display: none
+
+        .contact-us
+            h2 
+                margin-top: 28px
+                font-family: Roboto;
+                font-weight: bold;
+                font-size: 16px;
+
+            p 
+                width: 277px
+                margin-top: 14px
+                font-family: Roboto;
+                font-size: 16px;
+                line-height: 24px
+
+                a 
+                    text-decoration: underline
+
+        .appointment-hours
+            h2
+                margin-top: 42px
+                font-family: Roboto;
+                font-weight: bold;
+                font-size: 16px;
+
+            .when
+                margin-top: 10px
+                display: flex
+
+                .days
+                    border-right: 1px solid rgba(0, 0, 0, 0.2);
+                    padding-right: 10px
+                    font-family: Roboto;
+                    font-size: 16px;
+                    line-height: 24px;
+
+                .hours
+                    padding-left: 10px
+                    font-family: Roboto;
+                    font-size: 16px;
+                    line-height: 24px;
+
+@media only screen and (max-width: 350px)
+    .footer-container
+        .footer
+            margin: 12px 
+
+            .footer-logo-social
+                .footer-logo 
+                    width: 112px
+
+@media only screen and (min-width: 480px)
+    .footer-container
+        .footer
+            margin: 40px 
+
+            .footer-logo-social
+                .footer-logo 
+                    width: 160px
+
+@media only screen and (min-width: 600px)
+    .footer-container
+        .footer
+            margin: 40px 60px 
+
+            .contact-us
+                h2 
+                    margin-top: 35px
+
+@media only screen and (min-width: 900px)
+    .footer-container
+        .footer
+            margin: 40px 80px 
+
+@media only screen and (min-width: 1024px)
+    .footer-container
+        .footer
+            margin: 40px 110px 190px 110px
+
+            .footer-logo-social
+                .footer-twitter1, .footer-facebook1, .footer-instagram1
+                    display: none
+        
+            .footer-flexbox
+                display: flex
+                margin-top: 60px
+                justify-content: space-between
+
+                .contact-us
+                    h2
+                        margin-top: 0px
+
+                .appointment-hours
+                    h2 
+                        margin-top: 0px
+
+                .footer-logo-social2
+                    display: initial
+                    
+                    img
+                        margin-right: 24px
+                    
+                    .footer-instagram2
+                        margin-right: 0px
+

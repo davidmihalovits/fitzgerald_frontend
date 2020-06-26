@@ -1,0 +1,265 @@
+@import '../../App'
+
+.overlay
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+        
+.modal-open
+    overflow: hidden
+    
+.about 
+    text-align: center
+    background-color: #FAFAFA
+    padding: 0 40px 30px 40px
+
+    .modal
+        position: fixed
+        z-index: 101
+        top: 5%
+        left: 5%
+        bottom: 5%
+        right: 5%
+        background-color: white
+        box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.45)
+        text-align: center
+        overflow: auto
+        border-radius: 8px
+
+        .modal-x
+            position: sticky
+            top: 0
+            float: right
+            margin-right: 10px
+            padding-top: 10px
+            cursor: pointer
+
+        h1 
+            font-family: Muli;
+            font-weight: bold;
+            font-size: 24px;
+            color: #242424;
+            padding-top: 10px
+            clear: both
+
+        img
+            margin-top: 40px
+            width: 120px
+        
+        .modal-flexbox
+            .modal-flexbox-intro
+                margin: 60px 20px
+                
+                p 
+                    font-family: Roboto;
+                    font-size: 14px;
+                    line-height: 21px
+                    color: #000000;
+                    margin: 0px
+                    
+            .modal-flexbox-education
+                text-align: left
+                margin: 60px 20px
+
+                p 
+                    margin: 0px
+                    font-size: 14px
+                    line-height: 21px
+                    font-family: Roboto;
+
+                h2 
+                    font-size: 14px
+                    margin-bottom: 10px
+                    margin-top: 20px
+                    font-family: Roboto
+
+        button 
+            border: 1px solid $primary-color
+            padding: 13px 53px
+            outline: none
+            border-radius: 4px
+            color: $primary-color
+            font-family: Roboto
+            cursor: pointer
+            text-transform: unset
+            font-weight: 300
+            font-size: 15px
+
+            &:hover
+                background-color: $primary-color
+                color: white
+
+    h1 
+        font-family: Muli;
+        font-weight: bold;
+        font-size: 30px;
+        color: #242424;
+        padding-top: 50px
+
+    p 
+        text-align: left
+        font-family: Roboto;
+        font-size: 16px;
+        line-height: 24px
+        margin-top: 40px
+
+    .members
+        margin-top: 70px
+        text-align: center
+
+        h2 
+            margin-top: 18px
+            font-family: Roboto;
+            font-weight: bold;
+            font-size: 18px;
+
+        p 
+            font-family: Roboto;
+            font-size: 14px;
+            line-height: 21px
+            width: 210px
+            text-align: center
+            margin: auto
+            margin-top: 15px
+
+        button
+            margin-top: 20px
+            margin-bottom: 50px
+            border: 1px solid $primary-color
+            padding: 13px 53px
+            outline: none
+            border-radius: 4px
+            color: $primary-color
+            font-family: Roboto
+            cursor: pointer
+            text-transform: unset
+            font-weight: 300
+            font-size: 15px
+
+            &:hover
+                background-color: $primary-color
+                color: white
+
+@media only screen and (max-width: 350px)
+    .about
+        .modal
+            h1 
+                font-size: 22px;
+
+@media only screen and (min-width: 480px)
+    .about
+        .modal
+            .modal-flexbox
+                .modal-flexbox-intro
+                    margin: 60px 40px
+
+                .modal-flexbox-education
+                    margin: 60px 40px
+                    
+
+@media only screen and (min-width: 600px)
+    .about
+        p 
+            max-width: 520px
+            margin-left: auto
+            margin-right: auto
+
+        .modal
+            .modal-flexbox
+                .modal-flexbox-intro
+                    margin: 60px auto 
+                    width: 520px
+                   
+                .modal-flexbox-education
+                    width: 520px
+                    margin: 60px auto
+                    
+@media only screen and (min-width: 768px)
+    .about
+        padding-bottom: 80px
+
+        p
+            margin-top: 47px
+
+        h1 
+            font-size: 40px
+
+        .members
+            max-width: 850px 
+            margin-right: auto
+            margin-left: auto
+
+            .brian-reilly-speares
+                display: flex
+                justify-content: space-between
+                margin-top: 80px
+
+            .kristen-suz
+                display: flex
+                justify-content: space-around
+                margin-top: 80px
+
+                .member
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+
+                    p 
+                        margin-bottom: 20px
+
+                    img 
+                        width: 92px
+
+                    button
+                        margin-top: auto
+
+@media only screen and (min-width: 1024px)
+    .about
+        p
+            max-width: 850px
+
+        .modal
+            max-width: 900px
+            max-height: 600px
+            margin: auto
+
+            h1 
+                font-size: 40px
+
+            img 
+                width: 160px
+
+            .modal-flexbox
+                display: flex
+                margin: auto 60px
+
+                hr 
+                    display: none
+
+                .modal-flexbox-intro
+                    margin: 60px auto
+
+                    p
+                        width: 520px
+                        margin-right: auto
+                        margin-left: auto
+                        line-height: 24px
+                        padding-right: 40px
+
+                    .suz-paragraph
+                        padding: 0px
+                    
+                    .brian-paragraph
+                        padding: 0px
+
+                .modal-flexbox-education
+                    margin: 60px auto
+                    border-left: 1px solid rgba(0, 0, 0, 0.2);
+                    
+                    padding-left: 40px
+
+                    h2:first-child 
+                        margin-top: 0px
