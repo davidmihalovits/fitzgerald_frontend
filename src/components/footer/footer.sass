@@ -1,131 +1,117 @@
 @import '../../App'
 
-.footer-container
-    margin: 0 auto
-    max-width: 1300px
+.footer
+    border-top: 1px solid #e0e0e0
 
-    .footer
-        margin: 40px 20px
+    .footer-container
+        padding: 60px 12px
+        max-width: 1200px
+        margin: 0 auto
 
-        .footer-logo-social
-            display: flex
-            align-items: center
-
-            .footer-logo
-                width: 122px
-
-            img
-                margin-right: auto
-
-            a
-                margin-right: 20px
-
-            a:last-child
-                margin-right: 0px
-
-        .footer-logo-social2
+        .footer-logo-wide
             display: none
 
-        .contact-us
-            h2
-                margin-top: 28px
-                font-family: Roboto
-                font-weight: bold
-                font-size: 16px
+        .footer-logo-social
+            display: grid
+            grid-template-columns: 1fr 1fr
+            align-items: center
 
-            p
-                width: 277px
-                margin-top: 14px
-                font-family: Roboto
-                font-size: 16px
-                line-height: 24px
+            .social-icons
+                justify-self: end
 
-                a
-                    text-decoration: underline
+                .social-link
+                    margin-left: 15px
 
-        .appointment-hours
-            h2
-                margin-top: 42px
-                font-family: Roboto
-                font-weight: bold
-                font-size: 16px
+                    .social-icon
+                        width: 35px
+                        height: 35px
 
-            .when
-                margin-top: 10px
-                display: flex
+            .footer-logo
+                width: 110px
 
-                .days
-                    border-right: 1px solid rgba(0, 0, 0, 0.2)
-                    padding-right: 10px
-                    font-family: Roboto
-                    font-size: 16px
-                    line-height: 24px
-
-                .hours
-                    padding-left: 10px
-                    font-family: Roboto
-                    font-size: 16px
-                    line-height: 24px
-
-@media only screen and (max-width: 350px)
-    .footer-container
-        .footer
-            margin: 12px
-
-            .footer-logo-social
-                .footer-logo
-                    width: 112px
-
-@media only screen and (min-width: 480px)
-    .footer-container
-        .footer
-            margin: 40px
-
-            .footer-logo-social
-                .footer-logo
-                    width: 160px
-
-@media only screen and (min-width: 600px)
-    .footer-container
-        .footer
-            margin: 40px 60px
-
+        .footer-box
             .contact-us
-                h2
-                    margin-top: 35px
+                margin-top: 30px
 
-@media only screen and (min-width: 900px)
-    .footer-container
-        .footer
-            margin: 40px 80px
+                .contact-us-title
+                    font-family: Roboto
+                    font-weight: bold
+                    color: $black
 
-@media only screen and (min-width: 1024px)
-    .footer-container
-        .footer
-            margin: 40px 110px 190px 110px
+                .phone, .fax, .email, .address
+                    font-family: Roboto
+                    color: $black
+                    line-height: 23px
+
+                    a
+                        color: $black
+
+            .appointment-hours
+                margin-top: 30px
+
+                .appointment-hours-title
+                    font-family: Roboto
+                    font-weight: bold
+
+                .appointment-hours-box
+                    display: grid
+                    grid-template-columns: 1fr 2fr
+                    width: 240px
+
+                    .days
+                        border-right: 1px solid rgba(0, 0, 0, 0.2)
+                        font-family: Roboto
+                        line-height: 23px
+                        padding-right: 10px
+
+                    .hours
+                        font-family: Roboto
+                        line-height: 23px
+                        padding-left: 10px
+
+            .footer-logo-social-wide
+                display: none
+
+@media only screen and (min-width: 768px)
+    .footer
+        .footer-container
+            padding: 120px 20px
 
             .footer-logo-social
-                .footer-twitter1, .footer-facebook1, .footer-instagram1
-                    display: none
+                display: none
 
-            .footer-flexbox
-                display: flex
+            .footer-logo-wide
+                display: initial
+                width: 180px
+
+            .footer-box
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr
+                gap: 0 60px
                 margin-top: 60px
-                justify-content: space-between
+
+                .footer-logo-social-wide
+                    display: initial
+                    justify-self: end
+
+                    .social-link
+                        margin-left: 25px
+
+                        .social-icon
+                            width: 45px
+                            height: 45px
 
                 .contact-us
-                    h2
-                        margin-top: 0px
+                    margin: 0
 
                 .appointment-hours
-                    h2
-                        margin-top: 0px
+                    margin: 0
+                    justify-self: center
 
-                .footer-logo-social2
-                    display: initial
+@media only screen and (min-width: 1200px)
+    .footer
+        .footer-container
+            padding: 120px 0
 
-                    img
-                        margin-right: 24px
-
-                    .footer-instagram2
-                        margin-right: 0px
+            .footer-logo-wide
+                width: 220px

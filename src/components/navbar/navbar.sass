@@ -1,114 +1,76 @@
 @import '../../App'
 
-.fixed
+.navbar-container
     position: fixed
-    width: 100%
-    z-index: 100
     top: 0
+    width: 100%
+    z-index: 10
     background-color: white
 
-    .navbar-container
+    .navbar
+        font-family: Roboto
+        display: grid
+        grid-template-columns: 1fr 2fr
+        align-items: center
         margin: 0 auto
-        max-width: 1300px
+        padding: 12px
+        max-width: 1200px
 
-        .navbar
-            font-family: Roboto
-            margin: 20px 
-            display: flex
-            align-items: center
-            
-            
-            img
-                margin-right: auto
-                width: 122px
-            
-            p 
-                color: #0A2E4E
-                text-decoration-line: underline
+        .logo
+            width: 110px
+
+        .navbar-right
+            justify-self: end
+
+            .tel
+                color: $black
                 font-size: 12px
-                
-            button
-                background-color: $primary-color
-                padding: 8px 18px
-                outline: none
-                border: none
-                border-radius: 4px
-                color: white
-                cursor: pointer
-                text-transform: unset
-                font-size: 12px
-                margin-left: 12px
-                font-weight: 300
 
-                &:hover
-                    background-color: #008888
+            .book-now-button-link
+                text-decoration: none
 
-@media only screen and (max-width: 350px)
-    .fixed
-        .navbar-container
-            .navbar
-                margin: 12px
+                .book-now-button
+                    background-color: $primary-color
+                    padding: 8px 18px
+                    outline: none
+                    border: none
+                    border-radius: 4px
+                    color: white
+                    cursor: pointer
+                    text-transform: unset
+                    font-size: 12px
+                    white-space: nowrap
+                    margin-left: 8px
 
-                button
-                    margin-left: 5px
-
-                img 
-                    width: 112px
-
-@media only screen and (min-width: 480px)
-    .fixed
-        .navbar-container
-            .navbar
-                margin-right: 40px 
-                margin-left: 40px
-
-                img 
-                    width: 162px
-
-                button 
-                    margin-left: 20px
-
-@media only screen and (min-width: 600px)
-    .fixed
-        .navbar-container
-            .navbar
-                margin-right: 60px 
-                margin-left: 60px
+                    &:hover
+                        background-color: $hover-color
 
 @media only screen and (min-width: 768px)
-    .fixed
-        .navbar-container
-            .navbar
-                p 
-                    font-size: 15px
+    .navbar-container
+        .navbar
+            padding: 16px 20px
 
-                button 
-                    font-size: 15px
-                    margin-left: 30px
+            .logo
+                width: 180px
 
-@media only screen and (min-width: 900px)
-    .fixed
-        .navbar-container
-            .navbar
-                margin-right: 80px 
-                margin-left: 80px
+            .navbar-right
+                .tel
+                    font-size: 16px
 
-@media only screen and (min-width: 1024px)
-    .fixed
-        .navbar-container
-            .navbar
-                margin-right: 110px 
-                margin-left: 110px
-
-                img 
-                    width: 266px
+                .book-now-button-link
+                    .book-now-button
+                        font-size: 16px
+                        margin-left: 18px
 
 @media only screen and (min-width: 1200px)
-    .fixed
-        .navbar-container
-            img 
-                width: 180px
-                height: 60px
+    .navbar-container
+        .navbar
+            padding: 20px 0
 
-        
+            .logo
+                width: 220px
 
+            .navbar-right
+                .book-now-button-link
+                    .book-now-button
+                        margin-left: 22px

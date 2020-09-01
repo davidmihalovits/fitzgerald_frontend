@@ -1,117 +1,119 @@
 @import '../../../App'
-    
-.modal-services
+
+.modal-services-container
     position: fixed
-    z-index: 101
+    z-index: 10
     top: 5%
     left: 5%
     bottom: 5%
     right: 5%
+    max-width: 700px
+    margin: 0 auto
     background-color: white
-    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.45)
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.65)
     text-align: center
     overflow: auto
     border-radius: 8px
 
-    .modal-x
-        position: sticky
-        top: 0
-        float: right
-        margin-right: 10px
-        padding-top: 10px
-        cursor: pointer
+    .modal-x-container
+        text-align: right
+        margin: 10px 35px 0 0
 
-    h1 
-        font-family: Muli;
-        font-weight: bold;
-        font-size: 24px;
-        color: #242424;
-        width: 260px
-        margin: 0 auto
-        margin-top: 10px
-        clear: both
-
-    img 
-        margin-top: 40px
-        margin-bottom: 10px
-        width: 220px
-
-    button
-        margin-bottom: 0px
-
-    .button-change-text
-        padding: 0px 30px
-        border: none
-        margin: 20px 15px 0px 15px
-
-    .selected
-        background-color: $primary-color
-        padding: 8px 18px
-        outline: none
-        border: 1px solid $primary-color
-        border-radius: 4px
-        color: white
-        cursor: pointer
-        text-transform: unset
-        font-size: 16px
-        font-weight: 300
-
-        &:hover
-            background-color: $primary-color
-
-    .not-selected
-        background-color: white
-        padding: 8px 18px
-        outline: none
-        border: 1px solid $primary-color
-        border-radius: 4px
-        color: $primary-color
-        cursor: pointer
-        text-transform: unset
-        font-size: 16px
-        font-weight: 300
-
-        &:hover
-            background-color: rgba(77, 184, 184, 0.2)
+        .modal-x
+            position: fixed
+            cursor: pointer
             color: $primary-color
 
-    .modal-description
-        margin: 40px 20px
-
-        p 
-            margin: 0px
-            font-family: Roboto;
-            font-size: 14px;
-            line-height: 21px
-            color: #000000;
-
-        h2 
-            font-size: 20px
-            font-family: Roboto
-            margin-bottom: 10px
-
-@media only screen and (min-width: 480px)
     .modal-services
+        padding: 15px
+        max-width: 600px
+        margin: 0 auto
+
+        .modal-services-title
+            font-family: Muli
+            font-weight: bold
+            font-size: 28px
+            color: $black
+            margin: 40px auto 0 auto
+
+        .modal-services-title-image
+            margin-top: 40px
+            width: 100%
+
+        .button-change-text
+            padding: 0px 30px
+            border: none
+            margin: 20px 15px 0px 15px
+
+        .selected
+            background-color: $primary-color
+            padding: 8px 18px
+            outline: none
+            border: none
+            border-radius: 4px
+            color: white
+            cursor: pointer
+            text-transform: unset
+            font-weight: 300
+            margin: 20px 0 0 0
+
+            &:hover
+                background-color: $hover-color
+
+        .not-selected
+            background-color: white
+            padding: 8px 18px
+            outline: none
+            border: none
+            border-radius: 4px
+            color: $primary-color
+            cursor: pointer
+            text-transform: unset
+            font-weight: 300
+            margin: 20px 0 0 0
+
+            &:hover
+                background-color: rgba(77, 184, 184, 0.2)
+                color: $primary-color
+
         .modal-description
-            margin: 40px 40px
+            margin-top: 40px
 
-@media only screen and (min-width: 600px)
-    .modal-services
-        .modal-description
-            margin: 40px auto
-            width: 520px
+            p
+                font-family: Roboto
+                font-size: 14px
+                line-height: 23px
+                color: $black
+                text-align: left
 
-@media only screen and (min-width: 768px)
-    .modal-services
-        h1 
-            font-size: 40px
-            width: 360px
+            .modal-description-title
+                font-size: 20px
+                font-family: Roboto
+                font-weight: bold
+                margin: 40px 0
+                color: $black
+                text-align: left
 
-        img
-            width: 350px
+        .modal-services-button-link
+            text-decoration: none
 
-@media only screen and (min-width: 1024px)
-    .modal-services
-        max-width: 900px
-        max-height: 600px
-        margin: auto
+            .modal-services-button
+                margin: 40px 0 0 0
+                text-transform: unset
+                font-size: 16px
+                background-color: $primary-color
+                border-radius: 4px
+                border: none
+                color: white
+                padding: 12px 66px
+
+                &:hover
+                    background-color: $hover-color
+
+    .overlay-bottom
+        position: sticky
+        left: 0
+        bottom: 0
+        height: 100px
+        width: 100%
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)
