@@ -123,13 +123,9 @@ const About = () => {
                             <h2 className="member-name">
                                 Suzanne - Office Manager
                             </h2>
-                            <p
-                                style={{ opacity: "0" }}
-                                className="member-description"
-                            >
-                                Rehabilitation and Therapeutic Exercise, Active
-                                Release Technique, Yoga and Dance Injuries
-                            </p>
+                            <div
+                                style={{ height: "67.2px", marginTop: "15px" }}
+                            />
                             <Button
                                 className="read-more-button"
                                 onClick={() => setShowModalSuz(true)}

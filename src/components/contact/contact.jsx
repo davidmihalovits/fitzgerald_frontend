@@ -57,6 +57,7 @@ const Contact = () => {
                     setMessage("");
                     setLoading(false);
                     setMessageSent(true);
+                    setShowEmailError(false);
                     recaptcha.reset();
                 } else if (response.data.status === "fail") {
                     setVerified(false);
@@ -71,127 +72,129 @@ const Contact = () => {
     // eslint-disable-next-line
     const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const enabled = email.length > 0 && name.length > 0 && message.length > 0;
-
     const showtickEmail = email.match(regEx);
     const showtickMessage = message.trim().length > 0;
     const showtickName = name.trim().length > 0;
-
     const showcrossEmail = !email.match(regEx) && !email.trim().length < 1;
 
     return (
         <div className="contact">
             <h1 className="title">CONTACT US</h1>
-            <div className="contact-box">
-                <form
-                    className="contact-form"
-                    onSubmit={handleSubmit}
-                    method="POST"
-                >
-                    <label htmlFor="name" className="contact-label">
-                        Name
-                    </label>
-                    <input
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                        type="text"
-                        name="name"
-                        id="name"
-                        className="contact-input"
-                    />
-                    {showtickName && (
-                        <div className="showtick-container">
-                            <FontAwesomeIcon
-                                className="showtick-tick"
-                                icon={faCheck}
-                            />
-                        </div>
-                    )}
-                    <label htmlFor="email" className="contact-label">
-                        Email
-                    </label>
-                    <input
-                        onChange={(e) => setEmail(e.target.value)}
-                        type="text"
-                        name="email"
-                        id="email"
-                        value={email}
-                        className={
-                            showEmailError ? "error-input" : "contact-input"
-                        }
-                    />
-                    {showtickEmail && (
-                        <div className="showtick-container">
-                            <FontAwesomeIcon
-                                className="showtick-tick"
-                                icon={faCheck}
-                            />
-                        </div>
-                    )}
-                    {showcrossEmail && (
-                        <div className="showtick-container">
-                            <FontAwesomeIcon
-                                className="showtick-tick"
-                                icon={faTimes}
-                            />
-                        </div>
-                    )}
-                    {showEmailError && (
-                        <p className="error-message">Invalid email address.</p>
-                    )}
-                    <label htmlFor="message" className="contact-label">
-                        Message
-                    </label>
-                    <textarea
-                        onChange={(e) => setMessage(e.target.value)}
-                        type="text"
-                        name="message"
-                        id="message"
-                        value={message}
-                        className="contact-input textarea"
-                    />
-                    {showtickMessage && (
-                        <div className="showtick-container">
-                            <FontAwesomeIcon
-                                className="showtick-tick"
-                                icon={faCheck}
-                            />
-                        </div>
-                    )}
-                    <Reaptcha
-                        ref={(e) => setRecaptcha(e)}
-                        sitekey="6Lf2F8YZAAAAANLT_xnQOainwCcS5_jIMv4DhLcu"
-                        onVerify={onVerify}
-                        onExpire={onExpire}
-                        className="recaptcha"
-                    />
-                    <div className="contact-send">
-                        <Button
-                            type="submit"
-                            disabled={loading || !enabled || !verified}
-                            className="contact-send-button"
-                        >
-                            {messageSent && (
+            <div className="contact-wide">
+                <div className="contact-box">
+                    <form
+                        className="contact-form"
+                        onSubmit={handleSubmit}
+                        method="POST"
+                    >
+                        <label htmlFor="name" className="contact-label">
+                            Name
+                        </label>
+                        <input
+                            onChange={(e) => setName(e.target.value)}
+                            value={name}
+                            type="text"
+                            name="name"
+                            id="name"
+                            className="contact-input"
+                        />
+                        {showtickName && (
+                            <div className="showtick-container">
                                 <FontAwesomeIcon
+                                    className="showtick-tick"
                                     icon={faCheck}
-                                    className="message-sent-icon"
                                 />
-                            )}
-                            {loading && (
+                            </div>
+                        )}
+                        <label htmlFor="email" className="contact-label">
+                            Email
+                        </label>
+                        <input
+                            onChange={(e) => setEmail(e.target.value)}
+                            type="text"
+                            name="email"
+                            id="email"
+                            value={email}
+                            className={
+                                showEmailError ? "error-input" : "contact-input"
+                            }
+                        />
+                        {showtickEmail && (
+                            <div className="showtick-container">
                                 <FontAwesomeIcon
-                                    spin
-                                    icon={faSpinner}
-                                    className="spinner"
+                                    className="showtick-tick"
+                                    icon={faCheck}
                                 />
-                            )}
-                            Send
-                        </Button>
-                    </div>
-                    {showNotSentMessage && (
-                        <p className="not-sent-message">
-                            Message couldn't be sent. Please call us.
-                        </p>
-                    )}
-                </form>
+                            </div>
+                        )}
+                        {showcrossEmail && (
+                            <div className="showtick-container">
+                                <FontAwesomeIcon
+                                    className="showtick-tick"
+                                    icon={faTimes}
+                                />
+                            </div>
+                        )}
+                        {showEmailError && (
+                            <p className="error-message">
+                                Invalid email address.
+                            </p>
+                        )}
+                        <label htmlFor="message" className="contact-label">
+                            Message
+                        </label>
+                        <textarea
+                            onChange={(e) => setMessage(e.target.value)}
+                            type="text"
+                            name="message"
+                            id="message"
+                            value={message}
+                            className="contact-input textarea"
+                        />
+                        {showtickMessage && (
+                            <div className="showtick-container">
+                                <FontAwesomeIcon
+                                    className="showtick-tick"
+                                    icon={faCheck}
+                                />
+                            </div>
+                        )}
+                        <Reaptcha
+                            ref={(e) => setRecaptcha(e)}
+                            sitekey="6Lf2F8YZAAAAANLT_xnQOainwCcS5_jIMv4DhLcu"
+                            onVerify={onVerify}
+                            onExpire={onExpire}
+                            className="recaptcha"
+                        />
+                        <div className="contact-send">
+                            <Button
+                                type="submit"
+                                disabled={loading || !enabled || !verified}
+                                className="contact-send-button"
+                            >
+                                {messageSent && (
+                                    <FontAwesomeIcon
+                                        icon={faCheck}
+                                        className="message-sent-icon"
+                                    />
+                                )}
+                                {loading && (
+                                    <FontAwesomeIcon
+                                        spin
+                                        icon={faSpinner}
+                                        className="spinner"
+                                    />
+                                )}
+                                Send
+                            </Button>
+                        </div>
+                        {showNotSentMessage && (
+                            <p className="not-sent-message">
+                                Message couldn't be sent. Please give us a call.
+                            </p>
+                        )}
+                    </form>
+                </div>
                 <div className="map-container">
                     <a
                         href="https://www.google.com/maps/place/Fitzgerald+Spine+%26+Sports+Care/@38.914381,-77.233863,15z/data=!4m5!3m4!1s0x0:0x92c7c89f6a356096!8m2!3d38.9143808!4d-77.233863?hl=en-TH"

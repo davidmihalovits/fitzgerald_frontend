@@ -1,9 +1,9 @@
 @import "../../App"
 
 .contact
-	padding: 60px 12px
 	max-width: 850px
 	margin: 0 auto
+	padding: 60px 0
 
 	.title
 		font-family: Muli
@@ -12,116 +12,119 @@
 		color: $black
 		text-align: center
 
-	.contact-box
-		.contact-form
-			position: relative
+	.contact-wide
+		.contact-box
+			padding: 0 12px
 
-			.contact-label
-				font-family: Roboto
-				margin-top: 20px
-				display: inline-block
-				color: $black
+			.contact-form
+				position: relative
 
-			.contact-input
-				border: 1px solid $black
-				padding: 17px
-				margin-top: 5px
-				font-family: Roboto
-				color: $black
-				width: 100%
-				outline: none
-				-webkit-appearance: none
-				-webkit-border-radius: 0
-				border-radius: 0
+				.contact-label
+					font-family: Roboto
+					margin-top: 20px
+					display: inline-block
+					color: $black
 
-				&:focus
-					border: 1px solid $primary-color
+				.contact-input
+					border: 1px solid $black
+					padding: 17px
+					margin-top: 5px
+					font-family: Roboto
+					color: $black
+					width: 100%
+					outline: none
+					-webkit-appearance: none
+					-webkit-border-radius: 0
+					border-radius: 0
+
+					&:focus
+						border: 1px solid $primary-color
+						color: $primary-color
+
+				.error-input
+					border: 1px solid #F3372B
+					color: #F3372B
+					padding: 17px
+					margin-top: 5px
+					font-family: Roboto
+					width: 100%
+					outline: none
+					-webkit-appearance: none
+					-webkit-border-radius: 0
+					border-radius: 0
+
+				.textarea
+					resize: none
+					height: 180px
+
+					&:focus
+						border: 1px solid $primary-color
+
+				.recaptcha
+					margin-top: 20px
+					transform: scale(0.86)
+					transform-origin: 0 0
+
+				.not-sent-message
+					position: absolute
+					left: 0
+					right: 0
+					text-align: center
+					color: $primary-color
+					font-size: 14px
+
+				.showtick-container
+					position: absolute
+					right: 0
+					margin-top: -35px
+					margin-right: 10px
 					color: $primary-color
 
-			.error-input
-				border: 1px solid #F3372B
-				color: #F3372B
-				padding: 17px
-				margin-top: 5px
-				font-family: Roboto
-				width: 100%
-				outline: none
-				-webkit-appearance: none
-				-webkit-border-radius: 0
-				border-radius: 0
+					.showtick-tick
+						width: 18px
+						height: 18px
 
-			.textarea
-				resize: none
-				height: 180px
-
-				&:focus
-					border: 1px solid $primary-color
-
-			.recaptcha
-				margin-top: 20px
-				transform: scale(0.86)
-				transform-origin: 0 0
-
-			.not-sent-message
-				position: absolute
-				left: 0
-				right: 0
-				text-align: center
-				color: $primary-color
-				font-size: 14px
-
-			.showtick-container
-				position: absolute
-				right: 0
-				margin-top: -35px
-				margin-right: 10px
-				color: $primary-color
-
-				.showtick-tick
-					width: 18px
-					height: 18px
-
-			.error-message
-				color: #F3372B
-				font-family: Roboto
-				font-size: 14px
-				position: absolute
-
-			.contact-send
-				text-align: center
-				margin-top: 20px
-
-				.contact-send-button
-					background-color: $primary-color
-					padding: 13px 72px
-					outline: none
-					border: none
-					border-radius: 4px
-					color: white
+				.error-message
+					color: #F3372B
 					font-family: Roboto
-					cursor: pointer
-					text-transform: unset
+					font-size: 14px
+					position: absolute
 
-					&:hover
-						background-color: $hover-color
+				.contact-send
+					text-align: center
+					margin-top: 20px
 
-					&:disabled
-						background-color: #cccccc
-						color: #666666
-						opacity: 0.4
-						box-shadow: none
+					.contact-send-button
+						background-color: $primary-color
+						padding: 13px 72px
+						outline: none
+						border: none
+						border-radius: 4px
+						color: white
+						font-family: Roboto
+						cursor: pointer
+						text-transform: unset
 
-					.spinner
-						position: absolute
-						margin-left: 40px
-						font-size: 25px
-						color: $primary-color
+						&:hover
+							background-color: $hover-color
 
-					.message-sent-icon
-						position: absolute
-						margin-left: 40px
-						font-size: 25px
-						color: $primary-color
+						&:disabled
+							background-color: #cccccc
+							color: #666666
+							opacity: 0.4
+							box-shadow: none
+
+						.spinner
+							position: absolute
+							margin-left: 40px
+							font-size: 25px
+							color: $primary-color
+
+						.message-sent-icon
+							position: absolute
+							margin-left: 40px
+							font-size: 25px
+							color: $primary-color
 
 		.map-container
 			width: 100%
@@ -137,7 +140,7 @@
 	.contact
 		padding: 120px 20px
 
-		.contact-box
+		.contact-wide
 			display: grid
 			grid-template-columns: 1fr 1fr
 			gap: 0 25px
@@ -148,22 +151,28 @@
 				margin: 0
 				grid-area: left
 
-			.contact-form
-				grid-area: right
+			.contact-box
+				padding: 0
 
-				.contact-label:first-child
-					margin: 0
+				.contact-form
+					grid-area: right
 
-				.contact-send
-					text-align: left
+					.contact-label:first-child
+						margin: 0
 
-				.not-sent-message
-					text-align: left
-					font-size: 16px
+					.contact-send
+						text-align: left
+
+					.not-sent-message
+						text-align: left
+						font-size: 16px
 
 @media only screen and (min-width: 1200px)
 	.contact
 		padding: 120px 0
+
+		.contact-wide
+			gap: 0 45px
 
 		.title
 			font-size: 40px
