@@ -20,7 +20,7 @@
                 justify-self: end
 
                 .social-link
-                    margin-left: 15px
+                    margin-left: 10px
 
                     .social-icon
                         width: 35px
@@ -32,6 +32,7 @@
         .footer-box
             .contact-us
                 margin-top: 30px
+                width: 280px
 
                 .contact-us-title
                     font-family: Roboto
@@ -43,12 +44,14 @@
                     font-family: Roboto
                     color: $black
                     line-height: 23px
+                    margin: 0
 
                     a
                         color: $black
 
             .appointment-hours
                 margin-top: 30px
+                width: 280px
 
                 .appointment-hours-title
                     font-family: Roboto
@@ -59,7 +62,6 @@
                 .appointment-hours-box
                     display: grid
                     grid-template-columns: 1fr 2fr
-                    width: 240px
 
                     .days
                         border-right: 1px solid rgba(0, 0, 0, 0.2)
@@ -68,11 +70,18 @@
                         padding-right: 10px
                         color: $black
 
+                        p
+                            margin: 0
+
                     .hours
                         font-family: Roboto
                         line-height: 23px
                         padding-left: 10px
                         color: $black
+                        margin: 0
+
+                        p
+                            margin: 0
 
             .footer-logo-social-wide
                 display: none
@@ -91,8 +100,7 @@
 
             .footer-box
                 display: grid
-                grid-template-columns: 1fr 1fr 1fr
-                gap: 0 60px
+                grid-template-columns: 1fr 1fr auto
                 margin-top: 60px
 
                 .footer-logo-social-wide
@@ -100,18 +108,17 @@
                     justify-self: end
 
                     .social-link
-                        margin-left: 25px
+                        margin-left: 20px
 
                         .social-icon
-                            width: 45px
-                            height: 45px
+                            width: 40px
+                            height: 40px
 
                 .contact-us
                     margin: 0
 
                 .appointment-hours
                     margin: 0
-                    justify-self: center
 
 @media only screen and (min-width: 1200px)
     .footer
@@ -120,3 +127,12 @@
 
             .footer-logo-wide
                 width: 220px
+
+            .footer-box
+                .footer-logo-social-wide
+                    .social-link
+                        margin-left: 25px
+
+                        .social-icon
+                            width: 45px
+                            height: 45px

@@ -43,30 +43,26 @@ const Sport = (props) => {
             </div>
             <div className="modal-services">
                 <h1 className="modal-services-title">Taping Techniques</h1>
-                <Button
-                    className={`button-change-text ${
-                        kt ? `selected` : `not-selected`
-                    }`}
-                    onClick={ktTrue}
-                >
-                    KT
-                </Button>
-                <Button
-                    className={`button-change-text ${
-                        st ? `selected` : `not-selected`
-                    }`}
-                    onClick={stTrue}
-                >
-                    ST
-                </Button>
-                <Button
-                    className={`button-change-text ${
-                        rt ? `selected` : `not-selected`
-                    }`}
-                    onClick={rtTrue}
-                >
-                    RT
-                </Button>
+                <div className="modal-services-buttons">
+                    <Button
+                        className={`${kt ? `selected` : `not-selected`}`}
+                        onClick={ktTrue}
+                    >
+                        KT
+                    </Button>
+                    <Button
+                        className={`${st ? `selected` : `not-selected`}`}
+                        onClick={stTrue}
+                    >
+                        ST
+                    </Button>
+                    <Button
+                        className={`${rt ? `selected` : `not-selected`}`}
+                        onClick={rtTrue}
+                    >
+                        RT
+                    </Button>
+                </div>
                 <div className="modal-description">
                     {kt && (
                         <>

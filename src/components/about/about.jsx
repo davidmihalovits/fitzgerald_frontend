@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import "./about.sass";
 import Button from "@material-ui/core/button";
 import brian from "../../assets/brian.jpg";
@@ -26,6 +27,33 @@ const About = () => {
         setShowModalReilly(false);
         setShowModalBrian(false);
     };
+
+    if (
+        showModalSuz ||
+        showModalKristen ||
+        showModalSpeares ||
+        showModalReilly ||
+        showModalBrian
+    ) {
+        document.getElementById("root").style.opacity = "0.2";
+        document.body.classList.add("modal-open");
+    } else {
+        document.getElementById("root").style.opacity = "1";
+        document.body.classList.remove("modal-open");
+    }
+
+    useEffect(() => {
+        ReactDOM.render(
+            <React.StrictMode>
+                {showModalSuz && <Suz closeModal={closeModal} />}
+                {showModalKristen && <Kristen closeModal={closeModal} />}
+                {showModalSpeares && <Speares closeModal={closeModal} />}
+                {showModalReilly && <Reilly closeModal={closeModal} />}
+                {showModalBrian && <Brian closeModal={closeModal} />}
+            </React.StrictMode>,
+            document.getElementById("modal")
+        );
+    });
 
     return (
         <div className="about-container">
@@ -135,11 +163,6 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                {showModalSuz && <Suz closeModal={closeModal} />}
-                {showModalKristen && <Kristen closeModal={closeModal} />}
-                {showModalSpeares && <Speares closeModal={closeModal} />}
-                {showModalReilly && <Reilly closeModal={closeModal} />}
-                {showModalBrian && <Brian closeModal={closeModal} />}
             </div>
         </div>
     );

@@ -35,22 +35,20 @@ const Active = (props) => {
                 <h1 className="modal-services-title">
                     Soft Tissue & Muscle Therapy
                 </h1>
-                <Button
-                    className={`button-change-text ${
-                        iastm ? `selected` : `not-selected`
-                    }`}
-                    onClick={iastmTrue}
-                >
-                    IASTM
-                </Button>
-                <Button
-                    className={`button-change-text ${
-                        dms ? `selected` : `not-selected`
-                    }`}
-                    onClick={dmsTrue}
-                >
-                    DMS
-                </Button>
+                <div className="modal-services-buttons">
+                    <Button
+                        className={`${iastm ? `selected` : `not-selected`}`}
+                        onClick={iastmTrue}
+                    >
+                        IASTM
+                    </Button>
+                    <Button
+                        className={`${dms ? `selected` : `not-selected`}`}
+                        onClick={dmsTrue}
+                    >
+                        DMS
+                    </Button>
+                </div>
                 <div className="modal-description">
                     {iastm && (
                         <>

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import "./ourservices.sass";
 import services1 from "../../assets/services1.jpg";
 import services2 from "../../assets/services2.jpg";
@@ -34,6 +35,37 @@ const Ourservices = () => {
         setShowModalSport(false);
         setShowModalTaping(false);
     };
+
+    if (
+        showModalActive ||
+        showModalSoft ||
+        showModalChiro ||
+        showModalDry ||
+        showModalRehab ||
+        showModalSport ||
+        showModalTaping
+    ) {
+        document.getElementById("root").style.opacity = "0.2";
+        document.body.classList.add("modal-open");
+    } else {
+        document.getElementById("root").style.opacity = "1";
+        document.body.classList.remove("modal-open");
+    }
+
+    useEffect(() => {
+        ReactDOM.render(
+            <React.StrictMode>
+                {showModalActive && <Active closeModal={closeModal} />}
+                {showModalSoft && <Soft closeModal={closeModal} />}
+                {showModalChiro && <Chiro closeModal={closeModal} />}
+                {showModalDry && <Dry closeModal={closeModal} />}
+                {showModalRehab && <Rehab closeModal={closeModal} />}
+                {showModalSport && <Sport closeModal={closeModal} />}
+                {showModalTaping && <Taping closeModal={closeModal} />}
+            </React.StrictMode>,
+            document.getElementById("modal")
+        );
+    });
 
     return (
         <div className="ourservices">
@@ -268,13 +300,6 @@ const Ourservices = () => {
             >
                 <Button className="book-now-button">Book now</Button>
             </a>
-            {showModalActive && <Active closeModal={closeModal} />}
-            {showModalSoft && <Soft closeModal={closeModal} />}
-            {showModalChiro && <Chiro closeModal={closeModal} />}
-            {showModalDry && <Dry closeModal={closeModal} />}
-            {showModalRehab && <Rehab closeModal={closeModal} />}
-            {showModalSport && <Sport closeModal={closeModal} />}
-            {showModalTaping && <Taping closeModal={closeModal} />}
         </div>
     );
 };

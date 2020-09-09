@@ -13,9 +13,7 @@
         <link rel="manifest" href="./manifest.json" />
         <link
             href="https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-            rel="preload"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
+            rel="stylesheet"
         />
         <script
             src="https://www.google.com/recaptcha/api.js?&render=explicit"
@@ -26,14 +24,8 @@
     </head>
     <body>
         <noscript>JavaScript is required to see this website.</noscript>
-        <noscript>
-            <link
-                href="https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-                rel="stylesheet"
-                type="text/css"
-            />
-        </noscript>
         <div id="root"></div>
+        <div id="modal"></div>
         <script>
             if ("serviceWorker" in navigator) {
                 window.addEventListener("load", () => {
