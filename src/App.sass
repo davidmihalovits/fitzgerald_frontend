@@ -22,11 +22,12 @@ $black: #0A2E4E
         transition-duration: 0.3s
         color: $primary-color
 
-//scroll-bar color - all
-::-webkit-scrollbar
-    width: 15px
-::-webkit-scrollbar-thumb
-    background-color: $primary-color
-//scroll-bar color - firefox only
-html
-    scrollbar-color: $primary-color white
+@media only screen and (min-width: 1200px)
+    //scroll-bar color - all
+    ::-webkit-scrollbar
+        width: 15px
+    ::-webkit-scrollbar-thumb
+        background-color: $primary-color
+    //scroll-bar color - firefox only...
+    html
+        scrollbar-color: $primary-color white

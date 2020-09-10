@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Button from "@material-ui/core/button";
@@ -7,8 +7,30 @@ import taping1 from "../../../assets/taping1.jpg";
 import taping2 from "../../../assets/taping2.jpg";
 import taping3 from "../../../assets/taping3.jpg";
 import taping4 from "../../../assets/taping4.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Sport = (props) => {
+    AOS.init();
+
+    const useOnClick = (ref, handler) => {
+        useEffect(() => {
+            const listener = (event) => {
+                if (!ref.current || ref.current.contains(event.target)) {
+                    return;
+                }
+                handler(event);
+            };
+            document.addEventListener("mousedown", listener);
+            return () => {
+                document.removeEventListener("mousedown", listener);
+            };
+            // eslint-disable-next-line
+        }, []);
+    };
+    const ref = useRef();
+    useOnClick(ref, () => props.setShowModalTaping(false));
+
     const [kt, setKt] = useState(true);
     const [st, setSt] = useState(false);
     const [rt, setRt] = useState(false);
@@ -32,7 +54,11 @@ const Sport = (props) => {
     };
 
     return (
-        <div className="modal-services-container">
+        <div
+            className="modal-services-container"
+            data-aos="zoom-in-up"
+            ref={ref}
+        >
             <div className="modal-x-container">
                 <FontAwesomeIcon
                     onClick={props.closeModal}

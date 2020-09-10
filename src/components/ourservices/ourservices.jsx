@@ -55,17 +55,60 @@ const Ourservices = () => {
     useEffect(() => {
         ReactDOM.render(
             <React.StrictMode>
-                {showModalActive && <Active closeModal={closeModal} />}
-                {showModalSoft && <Soft closeModal={closeModal} />}
-                {showModalChiro && <Chiro closeModal={closeModal} />}
-                {showModalDry && <Dry closeModal={closeModal} />}
-                {showModalRehab && <Rehab closeModal={closeModal} />}
-                {showModalSport && <Sport closeModal={closeModal} />}
-                {showModalTaping && <Taping closeModal={closeModal} />}
+                {showModalActive && (
+                    <Active
+                        closeModal={closeModal}
+                        setShowModalActive={setShowModalActive}
+                    />
+                )}
+                {showModalSoft && (
+                    <Soft
+                        closeModal={closeModal}
+                        setShowModalSoft={setShowModalSoft}
+                    />
+                )}
+                {showModalChiro && (
+                    <Chiro
+                        closeModal={closeModal}
+                        setShowModalChiro={setShowModalChiro}
+                    />
+                )}
+                {showModalDry && (
+                    <Dry
+                        closeModal={closeModal}
+                        setShowModalDry={setShowModalDry}
+                    />
+                )}
+                {showModalRehab && (
+                    <Rehab
+                        closeModal={closeModal}
+                        setShowModalRehab={setShowModalRehab}
+                    />
+                )}
+                {showModalSport && (
+                    <Sport
+                        closeModal={closeModal}
+                        setShowModalSport={setShowModalSport}
+                    />
+                )}
+                {showModalTaping && (
+                    <Taping
+                        closeModal={closeModal}
+                        setShowModalTaping={setShowModalTaping}
+                    />
+                )}
             </React.StrictMode>,
             document.getElementById("modal")
         );
-    });
+    }, [
+        showModalActive,
+        showModalSoft,
+        showModalChiro,
+        showModalDry,
+        showModalRehab,
+        showModalSport,
+        showModalTaping,
+    ]);
 
     return (
         <div className="ourservices">

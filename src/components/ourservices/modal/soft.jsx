@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Button from "@material-ui/core/button";
@@ -6,8 +6,30 @@ import "./servicesModal.sass";
 import iastm1 from "../../../assets/iastm1.jpg";
 import iastm2 from "../../../assets/iastm2.jpg";
 import dms1 from "../../../assets/dms1.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Active = (props) => {
+    AOS.init();
+
+    const useOnClick = (ref, handler) => {
+        useEffect(() => {
+            const listener = (event) => {
+                if (!ref.current || ref.current.contains(event.target)) {
+                    return;
+                }
+                handler(event);
+            };
+            document.addEventListener("mousedown", listener);
+            return () => {
+                document.removeEventListener("mousedown", listener);
+            };
+            // eslint-disable-next-line
+        }, []);
+    };
+    const ref = useRef();
+    useOnClick(ref, () => props.setShowModalSoft(false));
+
     const [iastm, setIastm] = useState(true);
     const [dms, setDms] = useState(false);
 
@@ -22,7 +44,11 @@ const Active = (props) => {
     };
 
     return (
-        <div className="modal-services-container">
+        <div
+            className="modal-services-container"
+            data-aos="zoom-in-up"
+            ref={ref}
+        >
             <div className="modal-x-container">
                 <FontAwesomeIcon
                     onClick={props.closeModal}

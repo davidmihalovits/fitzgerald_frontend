@@ -45,15 +45,46 @@ const About = () => {
     useEffect(() => {
         ReactDOM.render(
             <React.StrictMode>
-                {showModalSuz && <Suz closeModal={closeModal} />}
-                {showModalKristen && <Kristen closeModal={closeModal} />}
-                {showModalSpeares && <Speares closeModal={closeModal} />}
-                {showModalReilly && <Reilly closeModal={closeModal} />}
-                {showModalBrian && <Brian closeModal={closeModal} />}
+                {showModalSuz && (
+                    <Suz
+                        closeModal={closeModal}
+                        setShowModalSuz={setShowModalSuz}
+                    />
+                )}
+                {showModalKristen && (
+                    <Kristen
+                        closeModal={closeModal}
+                        setShowModalKristen={setShowModalKristen}
+                    />
+                )}
+                {showModalSpeares && (
+                    <Speares
+                        closeModal={closeModal}
+                        setShowModalSpeares={setShowModalSpeares}
+                    />
+                )}
+                {showModalReilly && (
+                    <Reilly
+                        closeModal={closeModal}
+                        setShowModalReilly={setShowModalReilly}
+                    />
+                )}
+                {showModalBrian && (
+                    <Brian
+                        closeModal={closeModal}
+                        setShowModalBrian={setShowModalBrian}
+                    />
+                )}
             </React.StrictMode>,
             document.getElementById("modal")
         );
-    });
+    }, [
+        showModalBrian,
+        showModalReilly,
+        showModalSpeares,
+        showModalKristen,
+        showModalSuz,
+    ]);
 
     return (
         <div className="about-container">
