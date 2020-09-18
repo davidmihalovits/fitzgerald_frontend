@@ -37,9 +37,11 @@ const About = () => {
     ) {
         document.getElementById("root").style.opacity = "0.2";
         document.body.classList.add("modal-open");
+        document.getElementById("root").style.pointerEvents = "none";
     } else {
         document.getElementById("root").style.opacity = "1";
         document.body.classList.remove("modal-open");
+        document.getElementById("root").style.pointerEvents = "auto";
     }
 
     useEffect(() => {

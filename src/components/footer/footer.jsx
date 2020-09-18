@@ -3,6 +3,7 @@ import "./footer.sass";
 import logo from "../../assets/logo-fitzgerald.svg";
 import facebook from "../../assets/facebook.svg";
 import instagram from "../../assets/instagram.svg";
+import google from "../../assets/google.svg";
 
 const Footer = () => {
     return (
@@ -12,6 +13,18 @@ const Footer = () => {
                 <div className="footer-logo-social">
                     <img className="footer-logo" src={logo} alt="logo" />
                     <div className="social-icons">
+                        <a
+                            href="https://www.google.com/search?q=fitzgerald+spine+sports+care&oq=fit&aqs=chrome.1.69i60j69i59j69i57j46j69i60l4.2111j0j7&sourceid=chrome&ie=UTF-8#lrd=0x89b64ae4f1ab3b5d:0x92c7c89f6a356096,1,,,"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                        >
+                            <img
+                                className="social-icon"
+                                src={google}
+                                alt="google"
+                            />
+                        </a>
                         <a
                             href="https://www.facebook.com/fitzgeraldspinesports/"
                             target="_blank"
@@ -78,6 +91,18 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="footer-logo-social-wide">
+                        <a
+                            href="https://www.google.com/search?q=fitzgerald+spine+sports+care&oq=fit&aqs=chrome.1.69i60j69i59j69i57j46j69i60l4.2111j0j7&sourceid=chrome&ie=UTF-8#lrd=0x89b64ae4f1ab3b5d:0x92c7c89f6a356096,1,,,"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                        >
+                            <img
+                                className="social-icon"
+                                src={google}
+                                alt="google"
+                            />
+                        </a>
                         <a
                             href="https://www.facebook.com/fitzgeraldspinesports/"
                             target="_blank"

@@ -64,6 +64,8 @@ const Contact = () => {
                     setRecaptchaRes("");
                     setShowNotSentMessage(true);
                     setLoading(false);
+                    setMessageSent(false);
+                    setShowEmailError(false);
                     recaptcha.reset();
                 }
             });
@@ -71,11 +73,15 @@ const Contact = () => {
 
     // eslint-disable-next-line
     const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const enabled = email.length > 0 && name.length > 0 && message.length > 0;
+    const enabled =
+        email.length > 0 && name.length > 0 && message.length > 0 && verified;
     const showtickEmail = email.match(regEx);
     const showtickMessage = message.trim().length > 0;
     const showtickName = name.trim().length > 0;
     const showcrossEmail = !email.match(regEx) && !email.trim().length < 1;
+
+    const noCheck =
+        email.length > 0 || name.length > 0 || message.length > 0 || verified;
 
     return (
         <div className="contact">
@@ -116,7 +122,9 @@ const Contact = () => {
                             id="email"
                             value={email}
                             className={
-                                showEmailError ? "error-input" : "contact-input"
+                                showEmailError && !showtickEmail
+                                    ? "error-input"
+                                    : "contact-input"
                             }
                         />
                         {showtickEmail && (
@@ -135,7 +143,7 @@ const Contact = () => {
                                 />
                             </div>
                         )}
-                        {showEmailError && (
+                        {showEmailError && !showtickEmail && (
                             <p className="error-message">
                                 Invalid email address.
                             </p>
@@ -172,7 +180,7 @@ const Contact = () => {
                                 disabled={loading || !enabled || !verified}
                                 className="contact-send-button"
                             >
-                                {messageSent && (
+                                {messageSent && !noCheck && (
                                     <FontAwesomeIcon
                                         icon={faCheck}
                                         className="message-sent-icon"
