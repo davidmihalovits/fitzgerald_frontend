@@ -42,7 +42,7 @@ const Contact = () => {
         setLoading(true);
 
         await axios
-            .post("http://localhost:5000/contact", {
+            .post("https://fitzgeraldspinesports.herokuapp.com/contact", {
                 name: name,
                 email: email,
                 message: message,
@@ -169,7 +169,7 @@ const Contact = () => {
                         )}
                         <Reaptcha
                             ref={(e) => setRecaptcha(e)}
-                            sitekey="6Lf2F8YZAAAAANLT_xnQOainwCcS5_jIMv4DhLcu"
+                            sitekey="6LfWuKIZAAAAAOOV-1P-8KAebweubmrMxd5hhVnU"
                             onVerify={onVerify}
                             onExpire={onExpire}
                             className="recaptcha"
@@ -216,7 +216,7 @@ const Contact = () => {
                             zoom="15"
                             size="300x300"
                             scale="2"
-                            apiKey="AIzaSyD8qeygcKqDiil15nPbouBl13qghr4eC9o"
+                            apiKey="AIzaSyB80v_A4xdjKUyJKrhoFGt3f-D5K47O050"
                         >
                             <Marker
                                 location="38.914381,-77.233863"
