@@ -14,7 +14,7 @@ const Footer = () => {
                     <img className="footer-logo" src={logo} alt="logo" />
                     <div className="social-icons">
                         <a
-                            href="https://www.google.com/search?q=fitzgerald+spine+sports+care&oq=fit&aqs=chrome.1.69i60j69i59j69i57j46j69i60l4.2111j0j7&sourceid=chrome&ie=UTF-8#lrd=0x89b64ae4f1ab3b5d:0x92c7c89f6a356096,1,,,"
+                            href="https://search.google.com/local/writereview?placeid=ChIJXTur8eRKtokRlmA1ap_Ix5I"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="social-link"
@@ -92,7 +92,7 @@ const Footer = () => {
                     </div>
                     <div className="footer-logo-social-wide">
                         <a
-                            href="https://www.google.com/search?q=fitzgerald+spine+sports+care&oq=fit&aqs=chrome.1.69i60j69i59j69i57j46j69i60l4.2111j0j7&sourceid=chrome&ie=UTF-8#lrd=0x89b64ae4f1ab3b5d:0x92c7c89f6a356096,1,,,"
+                            href="https://search.google.com/local/writereview?placeid=ChIJXTur8eRKtokRlmA1ap_Ix5I"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="social-link"
