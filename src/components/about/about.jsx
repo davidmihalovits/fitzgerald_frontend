@@ -3,33 +3,20 @@ import ReactDOM from "react-dom";
 import "./about.sass";
 import Button from "@material-ui/core/button";
 import brian from "../../assets/brian.jpg";
-import speares from "../../assets/speares.jpg";
 import kristen from "../../assets/kristen.jpg";
-import suz from "../../assets/suz.jpg";
-import Suz from "./modal/suz";
 import Kristen from "./modal/kristen";
-import Speares from "./modal/speares";
 import Brian from "./modal/brian";
 
 const About = () => {
-    const [showModalSuz, setShowModalSuz] = useState(false);
     const [showModalKristen, setShowModalKristen] = useState(false);
-    const [showModalSpeares, setShowModalSpeares] = useState(false);
     const [showModalBrian, setShowModalBrian] = useState(false);
 
     const closeModal = () => {
-        setShowModalSuz(false);
         setShowModalKristen(false);
-        setShowModalSpeares(false);
         setShowModalBrian(false);
     };
 
-    if (
-        showModalSuz ||
-        showModalKristen ||
-        showModalSpeares ||
-        showModalBrian
-    ) {
+    if (showModalKristen || showModalBrian) {
         document.getElementById("root").style.opacity = "0.2";
         document.body.classList.add("modal-open");
         document.getElementById("root").style.pointerEvents = "none";
@@ -42,22 +29,10 @@ const About = () => {
     useEffect(() => {
         ReactDOM.render(
             <React.StrictMode>
-                {showModalSuz && (
-                    <Suz
-                        closeModal={closeModal}
-                        setShowModalSuz={setShowModalSuz}
-                    />
-                )}
                 {showModalKristen && (
                     <Kristen
                         closeModal={closeModal}
                         setShowModalKristen={setShowModalKristen}
-                    />
-                )}
-                {showModalSpeares && (
-                    <Speares
-                        closeModal={closeModal}
-                        setShowModalSpeares={setShowModalSpeares}
                     />
                 )}
                 {showModalBrian && (
@@ -69,7 +44,7 @@ const About = () => {
             </React.StrictMode>,
             document.getElementById("modal")
         );
-    }, [showModalBrian, showModalSpeares, showModalKristen, showModalSuz]);
+    }, [showModalBrian, showModalKristen]);
 
     return (
         <div className="about-container">
@@ -102,24 +77,6 @@ const About = () => {
                     <div className="member">
                         <img
                             className="member-image"
-                            src={speares}
-                            alt="speares"
-                        />
-                        <h2 className="member-name">Dr. Speares</h2>
-                        <p className="member-description">
-                            Sports Medicine, Shoulders, Neck, Back / Spinal
-                            Conditions, Dry Needling, Rehabilitation
-                        </p>
-                        <Button
-                            className="read-more-button"
-                            onClick={() => setShowModalSpeares(true)}
-                        >
-                            Read more
-                        </Button>
-                    </div>
-                    <div className="member">
-                        <img
-                            className="member-image"
                             src={kristen}
                             alt="kristen"
                         />
@@ -131,19 +88,6 @@ const About = () => {
                         <Button
                             className="read-more-button"
                             onClick={() => setShowModalKristen(true)}
-                        >
-                            Read more
-                        </Button>
-                    </div>
-                    <div className="member">
-                        <img className="member-image" src={suz} alt="suz" />
-                        <h2 className="member-name">
-                            Suzanne - Office Manager
-                        </h2>
-                        <div style={{ height: "67.2px", marginTop: "15px" }} />
-                        <Button
-                            className="read-more-button"
-                            onClick={() => setShowModalSuz(true)}
                         >
                             Read more
                         </Button>
