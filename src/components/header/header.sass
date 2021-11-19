@@ -1,5 +1,11 @@
 @import '../../App'
 
+@keyframes appear
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
 .header-container
     background: url('../../assets/header.jpg')
     background-repeat: no-repeat
@@ -44,6 +50,37 @@
                 &:hover
                     background-color: $hover-color
 
+        .header-popup
+            background: white
+            position: fixed
+            top: 20%
+            left: 5%
+            right: 5%
+            padding: 20px
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.65)
+            z-index: 11
+            animation: appear 1s
+
+            .header-popup-text
+                font-family: Roboto
+                font-size: 16px
+                line-height: 24px
+                color: $black
+
+            .header-popup-button
+                background-color: $primary-color
+                padding: 13px 56px
+                outline: none
+                border: none
+                border-radius: 4px
+                color: white
+                font-family: Roboto
+                cursor: pointer
+                margin: 20px 0 0 0
+
+                &:hover
+                    background-color: $hover-color
+
 @media only screen and (min-width: 768px)
     .header-container
         background: url('../../assets/headerwide.jpg')
@@ -61,6 +98,10 @@
             .slogan
                 line-height: 30px
 
+            .header-popup
+                width: 400px
+                margin: 0 auto
+
 @media only screen and (min-width: 1200px)
     .header-container
         text-align: left
@@ -77,3 +118,6 @@
 
             .slogan
                 width: 520px
+
+            .header-popup
+                text-align: center
